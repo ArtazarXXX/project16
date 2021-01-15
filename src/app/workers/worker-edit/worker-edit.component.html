@@ -1,0 +1,41 @@
+<form class="row mb-3 mx-3" [formGroup]="workerForm">
+    <div class="col-12 mt-2">
+        <h5 *ngIf="id > 0; else elseData">Исправление данных</h5>
+        <ng-template #elseData>
+            <h5>Добавление сотрудника</h5>
+        </ng-template>
+    </div>
+    <div class="col-7 my-1">
+        <input type="text" class="form-control" placeholder="Фамилия" formControlName="surname">
+    </div>
+    <div class="col-7 my-1">
+        <input type="text" class="form-control" placeholder="Имя*" formControlName="name">
+    </div>
+    <div class="col-7 my-1">
+        <input type="text" class="form-control" placeholder="Отчество*" formControlName="patronym">
+    </div>
+    <div class="col-7 my-1">
+        <input type="text" class="form-control" placeholder="Телефон (Например: +7-000-000-00-00)*" formControlName="phone">
+    </div>
+    <div class="col-7 my-1">
+        <input type="text" class="form-control" placeholder="Email*" formControlName="email">
+    </div>
+    <div class="col-7 my-1">
+        <input type="text" class="form-control" placeholder="Дата рождения (Например: 01.01.2000)*" formControlName="birthday">
+    </div>
+    <div class="col-7 my-1 mb-2">
+        <select class="custom-select" formControlName="type">
+            <option [ngValue]="MyWorkerType.IT">ИТ отдел</option>
+            <option [ngValue]="MyWorkerType.Sales">Отдел продаж</option>
+            <option [ngValue]="MyWorkerType.Delivery">Отдел доставки</option>
+            <option [ngValue]="MyWorkerType.Lawyer">Юридический отдел</option>
+        </select>
+    </div>
+    <div class="col-12 mt-1" *ngIf="workerForm.invalid">
+        <p [style.color]="'red'">*Все поля обязательны для заполнения</p>
+    </div>
+    <div class="col-7">
+        <button type="button" class="btn btn-primary col-3 mr-2"[disabled]="workerForm.invalid" (click)="onSave()">Добавить</button>
+        <button type="button" class="btn btn-danger col-3"[disabled]="workerForm.invalid" (click)="onDelete()">Удалить</button>
+    </div>
+</form>

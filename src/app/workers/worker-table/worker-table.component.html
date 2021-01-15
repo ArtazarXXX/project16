@@ -1,0 +1,39 @@
+<h1 class="ml-3 mt-2 mb-3">Список сотрудников</h1>
+<div class="conainer">
+  <div class="row my-3 mx-3">
+    <button class="btn btn-outline-primary col-2" (click)="idUp()">Id по возрастанию</button>
+    <button class="btn btn-outline-primary col-2 ml-3" (click)="idDown()">Id по убыванию</button>
+    <button class="btn btn-outline-primary col-2 ml-3" (click)="ageUp()">Возраст по возрастанию</button>
+    <button class="btn btn-outline-primary col-2 ml-3" (click)="ageDown()">Возраст по убыванию</button>
+    <input type="text" class="col-3 form-control ml-3" [(ngModel)]="myStr" placeholder="Поиск по имени и фамилии">
+  </div>
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th class="align-middle" scope="col" [style.width]="'5%'">#</th>
+        <th class="align-middle" scope="col" [style.width]="'15%'">Фамилия</th>
+        <th class="align-middle" scope="col" [style.width]="'10%'">Имя</th>
+        <th class="align-middle" scope="col" [style.width]="'5%'">Возраст</th>
+        <th class="align-middle" scope="col" [style.width]="'20%'">Отдел</th>
+        <th class="align-middle" scope="col" [style.width]="'20%'">
+            <button class="btn btn-primary" (click)="onAddWorker()">
+                Добавить пользователя
+            </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let worker of workers | myfilter: myStr : onFilter">
+        <th scope="row"> {{worker.id}} </th>
+        <td> {{worker.surname}} </td>
+        <td> {{worker.name}} </td>
+        <td> {{getAge(worker.birthday)}} </td>
+        <td> {{getType(worker.type)}} </td>
+        <td>
+            <button class="btn btn-primary mr-3" (click)="onEditWorker(worker.id)">Изменить</button>
+            <button class="btn btn-danger ml-1" (click)="onDeleteWorker(worker.id)">Удалить</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,54 @@
+{
+  "workers": [
+    {
+      "surname": "Иванов",
+      "name": "Иван",
+      "patronym": "Иванович",
+      "phone": "+7-926-347-59-99",
+      "email": "ivanov@mail.ru",
+      "birthday": "27.04.1983",
+      "type": 1,
+      "id": 1
+    },
+    {
+      "surname": "Петров",
+      "name": "Петр",
+      "patronym": "Петрович",
+      "phone": "+7-943-321-54-98",
+      "email": "petrov@mail.ru",
+      "birthday": "13.12.1994",
+      "type": 1,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Сидр",
+      "surname": "Сидоров",
+      "patronym": "Сидорович",
+      "phone": "+7-948-589-31-48",
+      "email": "sidorov@mail.ru",
+      "birthday": "04.06.1979",
+      "type": 2
+    },
+    {
+      "surname": "Азарина",
+      "name": "Марина",
+      "patronym": "Валентиновна",
+      "phone": "+7-933-694-19-38",
+      "email": "azarina@mail.ru",
+      "birthday": "22.08.1976",
+      "type": 1,
+      "id": 4
+    },
+    {
+      "surname": "Грибанов",
+      "name": "Артем",
+      "patronym": "Вячеславович",
+      "phone": "+7-941-932-69-13",
+      "email": "artemgribanov886@gmail.com",
+      "birthday": "21.01.2002",
+      "type": 0,
+      "id": 5
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "laba16": {
+    "lr16": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/laba16",
+            "outputPath": "dist/lr16",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,9 +24,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -61,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "laba16:build"
+            "browserTarget": "lr16:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "laba16:build:production"
+              "browserTarget": "lr16:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "laba16:build"
+            "browserTarget": "lr16:build"
           }
         },
         "test": {
@@ -109,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "laba16:serve"
+            "devServerTarget": "lr16:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "laba16:serve:production"
+              "devServerTarget": "lr16:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "laba16"
+  "defaultProject": "lr16"
 }
